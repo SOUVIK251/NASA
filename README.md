@@ -7,7 +7,7 @@ The application translates flight experiments from the **Combustion Integrated R
 ---
 
 ## Key Modules & Capabilities
-
+For start:- npm run dev
 ### 1. Overview (Mission-Control Telemetry & Research Snapshot)
 - **Telemetry Snapshot**: Real-time counts of experiments, peer-reviewed publications, documented findings, and quantitative sensor runs.
 - **Corpus Coverage**: Master distribution across 8 core research areas (*Flame spread, Flame extinction, Material flammability, Ignition, Oxygen concentration, Airflow dynamics, Temperature effects, Fire suppression, Microgravity physics*).
