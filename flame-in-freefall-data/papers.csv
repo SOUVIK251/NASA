@@ -1,0 +1,8 @@
+paper_id,experiment_id,title,source_type,year,url,notes
+P-001,EXP-FLEX,Studying Combustion and Fire Safety,NASA article,2024,https://www.nasa.gov/missions/station/studying-combustion-and-fire-safety/,Describes FLEX suppressant testing and the discovery of cool flames
+P-002,EXP_SOFIE_GEL,Investigations - NASA Science (SoFIE Facility),NASA Science page,2026,https://science.nasa.gov/biological-physical/investigations/,Describes SoFIE facility studying ignition and flammability of solid materials
+P-003,EXP-SAFFIRE,Spacecraft Fire Safety Demonstration (Saffire),NASA fact sheet / PDF,2025,https://www.nasa.gov/wp-content/uploads/2025/07/spacecraft-fire-safety-demonstration-saffire.pdf,Details Saffire I-V test samples and objectives
+P-004,EXP-ACME_BRE,ACME Project: The Space Station's Quest for the Secrets of Fire,SciTechDaily (reporting on NASA/Glenn Research Center work),2024,https://scitechdaily.com/acme-project-the-space-stations-quest-for-the-secrets-of-fire/,Describes the six ACME investigations and hardware timeline
+P-005,EXP_SOFIE_MIST,Investigations - NASA Science (SoFIE-MIST),NASA Science page,2026,https://science.nasa.gov/biological-physical/investigations/,Describes SoFIE-MIST goal of ISS fire suppression control
+P-006,ALL,PSI Investigations by Research Area,NASA PSI index page,2023,https://www.nasa.gov/physical-sciences-informatics-psi/psi-investigations-by-research-area/,Master index of PSI combustion investigations including ACME BRE and ACME S-Flames
+P-007,ALL,Physical Science Informatics overview,NASA Science page,2026,https://science.nasa.gov/physical-sciences-informatics-psi/history-of-physical-science-informatics/,Describes PSI's open-access data model across six physical science disciplines

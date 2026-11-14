@@ -1,0 +1,37 @@
+{
+  "model_name": "NASA-FLEX-PIML-v1.0",
+  "training_run": "FLEX_F2_T01 (Nayagam 2012, 21% O2)",
+  "holdout_run": "FLEX_F2_T02 (15% O2)",
+  "training_provenance": "APPROXIMATED_CURVE",
+  "provenance_limitation": "Trained on 1 run (FLEX_F2_T01), tested on 1 run (FLEX_F2_T02). Input curves are approximated to match published K constants, not raw flight telemetry.",
+  "features": [
+    "tau_s_mm2",
+    "oxygen_fraction",
+    "pressure_atm"
+  ],
+  "metrics_on_test": {
+    "rmse_mm": 0.3859,
+    "mae_mm": 0.2808,
+    "mape_pct": 35.67,
+    "r2": 0.8247,
+    "baseline_single_stage_rmse_mm": 0.3621,
+    "baseline_two_stage_rmse_mm": 0.1773
+  },
+  "coefficients": {
+    "K_hot_norm": 1.85997,
+    "K_cool_norm": 0.35461,
+    "ridge_coef": [
+      -2.249,
+      1.213806,
+      0.048477
+    ],
+    "ridge_intercept": 1.003386
+  },
+  "physics_bounds": {
+    "min_o2_pct": 12.0,
+    "max_o2_pct": 30.0,
+    "min_pressure_atm": 0.5,
+    "max_pressure_atm": 3.0,
+    "nominal_gravity_ms2": 0.0
+  }
+}

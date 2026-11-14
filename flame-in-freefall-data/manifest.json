@@ -1,0 +1,318 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-10-16",
+  "note": "Provenance tiers: MEASURED_TABLE > DIGITIZED_FROM_PUBLICATION > APPROXIMATED_CURVE > CALCULATED > MODEL_PREDICTION > ILLUSTRATIVE > METADATA_ONLY",
+  "datasets": [
+    {
+      "dataset_id": "FLEX-F2-T01",
+      "name": "FLEX-2 n-Heptane Droplet — 21% O₂, 1 atm (Time-Series)",
+      "file": "measurements/flex/FLEX_F2_T01_heptane_21O2_1atm.csv",
+      "psi_investigation": "PSI-69",
+      "source_document": "Nayagam et al., Combustion and Flame 159(12):3583–3588, 2012; Dietrich et al., NASA/TM-2014-218323",
+      "figure_or_table_reference": "Figure 2 (D² vs time) and Figure 4 (phase transitions) in Nayagam 2012",
+      "doi_or_url": "https://doi.org/10.1016/j.combustflame.2012.07.012",
+      "ntrs_url": "https://ntrs.nasa.gov/citations/20140009826",
+      "units": {
+        "time_s": "seconds",
+        "D_mm": "mm (droplet diameter)",
+        "D2_mm2": "mm² (D-squared, calculated from D_mm)",
+        "flame_diam_mm": "mm (illustrative estimate)",
+        "temp_K": "K (illustrative estimate)",
+        "burn_rate_K_mm2_s": "mm²/s (calculated from D2 finite differences)"
+      },
+      "license_attribution": "Data reproduced for educational/demonstration purposes. Original data held by NASA Glenn Research Center. Cite Nayagam et al. 2012 and Dietrich et al. 2014.",
+      "column_provenance": {
+        "time_s": "APPROXIMATED_CURVE — uniform 0.1 s grid, not variable-interval digitised points",
+        "D_mm": "APPROXIMATED_CURVE — constructed to match published K_hot ≈ 1.4 mm²/s and K_cool ≈ 0.3 mm²/s; not confirmed raw optical telemetry",
+        "D2_mm2": "CALCULATED — algebraically D_mm²",
+        "flame_diam_mm": "ILLUSTRATIVE — estimated at 3–4× droplet diameter; not a recorded measurement",
+        "temp_K": "ILLUSTRATIVE — smooth profile consistent with phase transitions; not a thermocouple record",
+        "burn_rate_K_mm2_s": "CALCULATED — finite differences of D2_mm2 with smoothing",
+        "phase": "APPROXIMATED_CURVE — inferred from D_mm thresholds and published transition times",
+        "data_quality": "column value is legacy label; see column_provenance for accurate tier"
+      },
+      "overall_provenance": "APPROXIMATED_CURVE",
+      "last_checked": "2026-10-16",
+      "known_limitations": [
+        "D(t) curve steps are uniform arithmetic sequences inconsistent with genuine digitisation scatter",
+        "Does not represent raw CIR/MDCA optical camera output",
+        "Qualitatively consistent with published findings but should not be cited as raw flight data",
+        "PSI-69 raw per-burn telemetry would replace this file — see DATA_NEEDED.md"
+      ]
+    },
+    {
+      "dataset_id": "FLEX-F2-T02",
+      "name": "FLEX-2 n-Heptane Droplet — 15% O₂, 1 atm (Time-Series)",
+      "file": "measurements/flex/FLEX_F2_T02_heptane_15O2_1atm.csv",
+      "psi_investigation": "PSI-69",
+      "source_document": "Nayagam et al., Combustion and Flame 159(12):3583–3588, 2012; Dietrich et al., NASA/TM-2014-218323",
+      "figure_or_table_reference": "Figure 5 (near-extinction O₂ runs) in Nayagam 2012",
+      "doi_or_url": "https://doi.org/10.1016/j.combustflame.2012.07.012",
+      "ntrs_url": "https://ntrs.nasa.gov/citations/20140009826",
+      "units": {
+        "time_s": "seconds",
+        "D_mm": "mm",
+        "D2_mm2": "mm²",
+        "flame_diam_mm": "mm (illustrative)",
+        "temp_K": "K (illustrative)",
+        "burn_rate_K_mm2_s": "mm²/s (calculated)"
+      },
+      "license_attribution": "Same as FLEX-F2-T01. Cite Nayagam et al. 2012.",
+      "column_provenance": {
+        "time_s": "APPROXIMATED_CURVE",
+        "D_mm": "APPROXIMATED_CURVE — same construction as T01 but for 15% O₂ conditions",
+        "D2_mm2": "CALCULATED",
+        "flame_diam_mm": "ILLUSTRATIVE",
+        "temp_K": "ILLUSTRATIVE",
+        "burn_rate_K_mm2_s": "CALCULATED",
+        "phase": "APPROXIMATED_CURVE"
+      },
+      "overall_provenance": "APPROXIMATED_CURVE",
+      "last_checked": "2026-10-16",
+      "known_limitations": [
+        "Same construction caveats as FLEX-F2-T01",
+        "Used as the ML holdout test set — metrics measure fit to this constructed curve, not to raw scatter"
+      ]
+    },
+    {
+      "dataset_id": "FLEX-SUMMARY",
+      "name": "FLEX-2 Per-Test Summary Measurements (Table IX)",
+      "file": "measurements/flex/flex_measurements.csv",
+      "psi_investigation": "PSI-69",
+      "source_document": "NASA/TP—2015-216046 'Flame Extinguishment Experiment (FLEX) Detailed Test Results'",
+      "figure_or_table_reference": "Table IX (pp. 23–35) — all 284 flight test burns",
+      "doi_or_url": "https://ntrs.nasa.gov/citations/20150018611",
+      "ntrs_url": "https://ntrs.nasa.gov/citations/20150018611",
+      "units": {
+        "oxygen_pct": "%",
+        "pressure_atm": "atm",
+        "droplet_diameter_mm": "mm",
+        "ignition_time_s": "s",
+        "extinction_time_s": "s",
+        "cool_flame_observed": "boolean"
+      },
+      "license_attribution": "NASA Technical Publication. Cite NASA/TP—2015-216046.",
+      "column_provenance": {
+        "experiment_id": "METADATA_ONLY",
+        "test_id": "MEASURED_TABLE",
+        "fuel": "MEASURED_TABLE",
+        "oxygen_pct": "MEASURED_TABLE",
+        "pressure_atm": "MEASURED_TABLE",
+        "droplet_diameter_mm": "MEASURED_TABLE",
+        "ambient_flow": "MEASURED_TABLE",
+        "ignition_time_s": "MEASURED_TABLE",
+        "extinction_time_s": "MEASURED_TABLE",
+        "cool_flame_observed": "MEASURED_TABLE"
+      },
+      "overall_provenance": "MEASURED_TABLE",
+      "last_checked": "2026-10-16",
+      "known_limitations": [
+        "Only 8 representative runs included; full Table IX has 284 runs",
+        "Scalar endpoint values only — no time-series for these specific runs"
+      ]
+    },
+    {
+      "dataset_id": "BASS2-PMMA-T01",
+      "name": "BASS-II PMMA Rod — 21% O₂, 10 cm/s Concurrent (Time-Series)",
+      "file": "measurements/bass/BASS2_PMMA_T01_21O2_10cms.csv",
+      "psi_investigation": "PSI-25",
+      "source_document": "Olson et al., Combustion and Flame 168:378–390, 2016; NASA/TM-20210011385",
+      "figure_or_table_reference": "Figure 3 (flame position vs time) and Table A.5 (steady spread rate) in Olson 2016",
+      "doi_or_url": "https://doi.org/10.1016/j.combustflame.2015.12.007",
+      "ntrs_url": "https://ntrs.nasa.gov/citations/20210011385",
+      "units": {
+        "time_s": "seconds",
+        "flame_pos_mm": "mm",
+        "flame_length_mm": "mm",
+        "flame_width_mm": "mm",
+        "spread_rate_cm_s": "cm/s",
+        "temp_K": "K (illustrative)",
+        "mass_loss_rate_mg_s": "mg/s (illustrative)"
+      },
+      "license_attribution": "Cite Olson et al. 2016 and NASA/TM-20210011385.",
+      "column_provenance": {
+        "time_s": "APPROXIMATED_CURVE",
+        "flame_pos_mm": "APPROXIMATED_CURVE — derived from published steady spread rate; not independent digitised points",
+        "flame_length_mm": "APPROXIMATED_CURVE — consistent with published ~12 mm steady-state value",
+        "flame_width_mm": "APPROXIMATED_CURVE",
+        "spread_rate_cm_s": "APPROXIMATED_CURVE — matches published 0.079 cm/s; smooth decline is constructed",
+        "o2_pct": "MEASURED_TABLE — constant test condition",
+        "airflow_cm_s": "MEASURED_TABLE — constant test condition",
+        "temp_K": "ILLUSTRATIVE",
+        "mass_loss_rate_mg_s": "ILLUSTRATIVE",
+        "phase": "APPROXIMATED_CURVE"
+      },
+      "overall_provenance": "APPROXIMATED_CURVE",
+      "last_checked": "2026-10-16",
+      "known_limitations": [
+        "Smooth monotone spread position inconsistent with genuine digitisation scatter",
+        "PSI-25 raw video + thermocouple traces would replace this file — see DATA_NEEDED.md"
+      ]
+    },
+    {
+      "dataset_id": "BASS2-SUMMARY",
+      "name": "BASS-II Per-Test Summary Measurements",
+      "file": "measurements/bass/bass_measurements.csv",
+      "psi_investigation": "PSI-25",
+      "source_document": "NASA/TM-20210011385 'Burning and Suppression of Solids-II Summary Report'",
+      "figure_or_table_reference": "Table A.5 (Olson PMMA rod tests) and Table A.1 (Ferkul fabric tests)",
+      "doi_or_url": "https://ntrs.nasa.gov/citations/20210011385",
+      "ntrs_url": "https://ntrs.nasa.gov/citations/20210011385",
+      "units": {
+        "burn_rate": "cm/s (flame spread rate)",
+        "oxygen_pct": "%",
+        "pressure_atm": "atm"
+      },
+      "license_attribution": "NASA Technical Memorandum. Cite NASA/TM-20210011385.",
+      "column_provenance": {
+        "experiment_id": "METADATA_ONLY",
+        "test_id": "MEASURED_TABLE",
+        "fuel": "MEASURED_TABLE",
+        "sample_geometry": "MEASURED_TABLE",
+        "oxygen_pct": "MEASURED_TABLE",
+        "pressure_atm": "MEASURED_TABLE",
+        "burn_rate": "MEASURED_TABLE",
+        "flame_spread_observed": "MEASURED_TABLE",
+        "extinction_observed": "MEASURED_TABLE"
+      },
+      "overall_provenance": "MEASURED_TABLE",
+      "last_checked": "2026-10-16",
+      "known_limitations": [
+        "7 representative runs; full NASA/TM has 70+ runs"
+      ]
+    },
+    {
+      "dataset_id": "SAFFIRE-I",
+      "name": "SAFFIRE-I SIBAL Fabric — Large-Scale Fire (Time-Series)",
+      "file": "measurements/saffire/SAFFIRE_I_SIBAL_fabric.csv",
+      "psi_investigation": "PSI-98",
+      "source_document": "NASA NTRS 20170008805 'Results of Large-Scale Spacecraft Flammability Tests' (Ferkul, Olson, Urban, Ruff et al.)",
+      "figure_or_table_reference": "Table I (p. 29) and thermocouple figures; steady spread rate 1.8 mm/s and flame length 40 mm confirmed",
+      "doi_or_url": "https://ntrs.nasa.gov/citations/20170008805",
+      "ntrs_url": "https://ntrs.nasa.gov/citations/20170008805",
+      "units": {
+        "time_s": "seconds",
+        "flame_pos_cm": "cm",
+        "flame_length_cm": "cm",
+        "flame_width_cm": "cm",
+        "spread_rate_cm_s": "cm/s",
+        "peak_temp_K": "K",
+        "flame_power_W": "W",
+        "flame_exists": "boolean"
+      },
+      "license_attribution": "NASA NTRS document 20170008805. Cite Ferkul et al. 2017.",
+      "column_provenance": {
+        "time_s": "APPROXIMATED_CURVE — time grid constructed from reported 420 s duration",
+        "flame_pos_cm": "APPROXIMATED_CURVE — derived from published 1.8 mm/s spread rate; not independent digitised trace",
+        "flame_length_cm": "APPROXIMATED_CURVE — steady-state plateau consistent with reported 40 mm; constant for 330 s is too smooth for raw thermocouple",
+        "flame_width_cm": "APPROXIMATED_CURVE — ramps to full 40.6 cm width",
+        "spread_rate_cm_s": "MEASURED_TABLE — 0.180 cm/s value from Table I; interpolated ramp-up is constructed",
+        "peak_temp_K": "APPROXIMATED_CURVE — consistent with reported ~1630 K peak; precise trace not independently digitised",
+        "flame_power_W": "MEASURED_TABLE — 1200 ± 300 W from Table I; time-variation pattern is constructed",
+        "flame_exists": "APPROXIMATED_CURVE",
+        "phase": "APPROXIMATED_CURVE"
+      },
+      "overall_provenance": "APPROXIMATED_CURVE",
+      "last_checked": "2026-10-16",
+      "known_limitations": [
+        "Steady-spread region shows exact constant values (flame_length=4.0, spread=0.180) for 330 s — characteristic of constructed curve not raw thermocouple",
+        "PSI-98 raw sensor traces would replace this file — see DATA_NEEDED.md",
+        "Summary scalar values (Table I) are reliably sourced; time-series interpolation is not"
+      ]
+    },
+    {
+      "dataset_id": "SAFFIRE-SUMMARY",
+      "name": "SAFFIRE Multi-Mission Summary Measurements",
+      "file": "measurements/saffire/saffire_measurements.csv",
+      "psi_investigation": "PSI-98",
+      "source_document": "NASA NTRS 20170008805 Table I; NASA/TM-20230005412 (Saffire IV–VI)",
+      "figure_or_table_reference": "Table I (p. 29) in NTRS 20170008805",
+      "doi_or_url": "https://ntrs.nasa.gov/citations/20170008805",
+      "ntrs_url": "https://ntrs.nasa.gov/citations/20170008805",
+      "units": {
+        "flame_spread_rate": "mm/s",
+        "heat_release_rate": "W",
+        "pressure_atm": "atm"
+      },
+      "license_attribution": "NASA NTRS document 20170008805. Cite Ferkul et al. 2017.",
+      "column_provenance": {
+        "experiment_id": "METADATA_ONLY",
+        "test_id": "MEASURED_TABLE",
+        "mission": "MEASURED_TABLE",
+        "sample_material": "MEASURED_TABLE",
+        "pressure_atm": "MEASURED_TABLE",
+        "flame_spread_rate": "MEASURED_TABLE",
+        "heat_release_rate": "MEASURED_TABLE",
+        "notes": "METADATA_ONLY"
+      },
+      "overall_provenance": "MEASURED_TABLE",
+      "last_checked": "2026-10-16",
+      "known_limitations": [
+        "6 representative runs from SAFFIRE-I, II, and IV",
+        "Heat release rate is a mean estimate (±300 W) not a precise per-second measurement"
+      ]
+    },
+    {
+      "dataset_id": "SOFIE-GEL",
+      "name": "SoFIE-GEL — Solid Fuel Ignition and Extinction",
+      "file": "measurements/sofie_gel/ (no time-series file present)",
+      "psi_investigation": "PSI-SOFIE",
+      "source_document": "NASA SoFIE GEL Architecture Review; Olson, Fernandez-Pello, T'ien, Torero 2022",
+      "figure_or_table_reference": "unknown",
+      "doi_or_url": "unknown",
+      "ntrs_url": "unknown",
+      "units": {},
+      "license_attribution": "unknown",
+      "column_provenance": {},
+      "overall_provenance": "METADATA_ONLY",
+      "last_checked": "2026-10-16",
+      "known_limitations": [
+        "No time-series CSV is present for SoFIE-GEL",
+        "dataset_index.json contains metadata only"
+      ]
+    },
+    {
+      "dataset_id": "ML-TRAINING",
+      "name": "FLEX ML Training Dataset (processed)",
+      "file": "processed/flex_ml_training.csv",
+      "psi_investigation": "PSI-69",
+      "source_document": "Derived from FLEX-F2-T01 and FLEX-F2-T02 CSVs",
+      "figure_or_table_reference": "N/A — computed file",
+      "doi_or_url": "N/A",
+      "ntrs_url": "N/A",
+      "units": {
+        "tau_s_mm2": "s/mm² (Spalding non-dimensional time)",
+        "target_D2_norm": "dimensionless [0, 1]",
+        "target_D_mm": "mm",
+        "target_burn_rate_K": "mm²/s"
+      },
+      "license_attribution": "Derived dataset. Cite source CSVs per above.",
+      "column_provenance": {
+        "run_id": "METADATA_ONLY",
+        "time_s": "APPROXIMATED_CURVE — inherited from source CSVs",
+        "D0_mm": "MEASURED_TABLE — initial diameter from Table IX",
+        "oxygen_pct": "MEASURED_TABLE — test condition",
+        "oxygen_fraction": "CALCULATED",
+        "pressure_atm": "MEASURED_TABLE",
+        "gravity_ms2": "MEASURED_TABLE — ISS ≈ 0",
+        "tau_s_mm2": "CALCULATED — t / D0²",
+        "phase": "APPROXIMATED_CURVE",
+        "regime_code": "CALCULATED — numeric encoding of phase",
+        "is_cool_flame": "CALCULATED",
+        "is_extinguished": "CALCULATED",
+        "target_D_mm": "APPROXIMATED_CURVE — inherited from source",
+        "target_D2_mm2": "CALCULATED",
+        "target_D2_norm": "CALCULATED",
+        "target_burn_rate_K": "CALCULATED — finite differences",
+        "data_provenance": "column value was PROCESSED_MEASURED_OPTICAL (incorrect); correct tier is APPROXIMATED_CURVE"
+      },
+      "overall_provenance": "APPROXIMATED_CURVE",
+      "last_checked": "2026-10-16",
+      "known_limitations": [
+        "ML model trained on T01 (1 run), tested on T02 (1 run) — not validated across multiple independent conditions",
+        "Source D(t) data are approximated curves, not raw optical telemetry",
+        "Model accuracy metrics reflect fit to the constructed curve, not true experimental variability"
+      ]
+    }
+  ]
+}

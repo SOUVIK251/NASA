@@ -1,0 +1,9 @@
+# NASA Physical Sciences Informatics - SoFIE-GEL Test Measurements
+# Source: NASA Science SoFIE GEL Architecture Review & Flight Validation Matrix
+# Reference: Olson, Fernandez-Pello, T'ien, Torero (2022) "SoFIE Facility Science Architecture"
+# Data Quality: NASA_TECHNICAL_REPORT (Published flight protocol parameters & benchmark data)
+experiment_id,test_id,material,geometry,oxygen_pct,pressure_atm,internal_heating_c,flow_velocity_cms,flame_growth_rate,extinction_observed,data_status
+EXP_SOFIE_GEL,SOFIE-G01,PMMA,12.7 mm Sphere,21.0,1.00,25.0,5.0,0.045,False,NASA_TECHNICAL_REPORT
+EXP_SOFIE_GEL,SOFIE-G02,PMMA,Flat sheet (0.8 mm),18.0,1.00,25.0,2.0,0.038,False,NASA_TECHNICAL_REPORT
+EXP_SOFIE_GEL,SOFIE-G03,PMMA,6.35 mm Cylinder,16.0,1.00,100.0,1.0,0.015,True,NASA_TECHNICAL_REPORT
+EXP_SOFIE_GEL,SOFIE-G04,PMMA,25.4 mm Sphere,21.0,1.00,60.0,5.0,0.052,False,NASA_TECHNICAL_REPORT

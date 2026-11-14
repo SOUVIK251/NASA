@@ -1,0 +1,17 @@
+{
+  "name": "flame-in-freefall",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Flame in Freefall — NASA Microgravity Combustion Research Workstation",
+  "scripts": {
+    "dev": "py run_dev.py",
+    "dev:backend": "py -m uvicorn backend.main:app --reload --port 8000",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "lint": "npm --prefix frontend run lint",
+    "start": "py run_workstation.py",
+    "train:ml": "py backend/ml/train_flex_model.py",
+    "test:ml": "py test_ml_pipeline.py",
+    "stop": "cmd /c stop_servers.bat"
+  }
+}

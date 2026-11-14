@@ -1,0 +1,12 @@
+# NASA Physical Sciences Informatics - BASS-II (PSI-25) Test Summary Measurements
+# Source: NASA/TM-20210011385 "Burning and Suppression of Solids-II Summary Report"
+# Reference: Table A.5 (Olson PMMA rod concurrent flow tests) and Table A.1 (Ferkul fabric tests)
+# Data Quality: NASA_TECHNICAL_REPORT (Direct flight test records)
+experiment_id,test_id,fuel,sample_geometry,oxygen_pct,pressure_atm,burn_rate,flame_spread_observed,extinction_observed,data_status
+EXP-BASS,BASS2-O1,Clear PMMA,6.35 mm Rod,21.0,1.0,0.079,True,False,NASA_TECHNICAL_REPORT
+EXP-BASS,BASS2-O2,Clear PMMA,9.53 mm Rod,21.0,1.0,0.065,True,False,NASA_TECHNICAL_REPORT
+EXP-BASS,BASS2-O4,Black PMMA,6.35 mm Rod,21.0,1.0,0.082,True,False,NASA_TECHNICAL_REPORT
+EXP-BASS,BASS2-O10,Clear PMMA,6.35 mm Rod,16.1,1.0,0.041,True,True,NASA_TECHNICAL_REPORT
+EXP-BASS,BASS2-O13a,Clear PMMA,12.70 mm Rod,14.6,1.0,0.028,True,True,NASA_TECHNICAL_REPORT
+EXP-BASS,BASS2-F1,Nomex fabric,Flat sheet,21.0,1.0,0.000,False,True,NASA_TECHNICAL_REPORT
+EXP-BASS,BASS2-F4,SIBAL fabric,Flat sheet,21.0,1.0,0.180,True,False,NASA_TECHNICAL_REPORT

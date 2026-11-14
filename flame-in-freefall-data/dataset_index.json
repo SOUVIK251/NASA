@@ -1,0 +1,218 @@
+{
+  "version": "1.1.0",
+  "last_updated": "2026-10-04",
+  "data_provenance_standard": "NASA_PSI_AUDIT_V1",
+  "datasets": [
+    {
+      "dataset_id": "FLEX",
+      "psi_id": "PSI-69",
+      "name": "Flame Extinguishment Experiment (FLEX)",
+      "investigation_type": "DROPLET_COMBUSTION",
+      "platform": "ISS Combustion Integrated Rack (CIR)",
+      "gravity": "microgravity_iss",
+      "gravity_ms2": 0.0,
+      "principal_investigator": "Forman A. Williams (UCSD), Daniel L. Dietrich (NASA Glenn)",
+      "institution": "UC San Diego / NASA Glenn Research Center",
+      "years": "2009-2013",
+      "description": "The Flame Extinguishment Experiment investigated the combustion and extinction of isolated liquid fuel droplets in microgravity. FLEX led to the landmark discovery of quasi-steady 'cool flames' — low-temperature combustion (~600-800 K) that persisted invisibly after the visible hot flame extinguished.",
+      "key_discovery": "Cool flame combustion (low-temperature, ~600-800 K) observed after hot flame extinction in microgravity",
+      "psi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-69",
+      "data_status": "APPROXIMATED_CURVE",
+      "data_attribution": "Droplet diameter, D², burning rate K, and combustion phases digitized from Nayagam et al. (Combustion and Flame 159(12):3583-3588, 2012), Dietrich et al. (NASA/TM-2014-218323), and flight test records in NASA/TP—2015-216046 Table IX. Flame diameter and zone temperatures are illustrative estimates for 3D visualization.",
+      "experiments": [
+        {
+          "experiment_id": "FLEX-F2-T01",
+          "name": "n-Heptane Droplet - 21% O2 - Standard Atmosphere - Cool Flame Flight Test",
+          "fuel": "n-Heptane (C7H16)",
+          "fuel_phase": "liquid_droplet",
+          "oxygen_pct": 21.0,
+          "diluent": "N2",
+          "pressure_atm": 1.0,
+          "initial_droplet_diameter_mm": 3.50,
+          "airflow": "quiescent",
+          "airflow_cm_s": 0.0,
+          "duration_s": 13.2,
+          "data_file": "FLEX_F2_T01_heptane_21O2_1atm.csv",
+          "measurements": ["D_mm", "D2_mm2", "burn_rate_K_mm2_s", "phase", "flame_diam_mm", "temp_K"],
+          "measured_measurements": ["time_s", "D_mm", "D2_mm2", "burn_rate_K_mm2_s", "phase", "droplet_diameter", "D_squared", "burning_rate", "combustion_phase"],
+          "illustrative_measurements": ["flame_diam_mm", "temp_K", "flame_diameter", "ambient_temperature"],
+          "highlights": [
+            "Hot flame burning: 0.0 to 5.0 s (K ~ 1.4 mm²/s)",
+            "Radiative hot flame extinction at t = 5.0 s (D ~ 1.68 mm)",
+            "Quasi-steady cool flame combustion continues from 5.1 to 13.0 s (K ~ 0.3 mm²/s)",
+            "Extinction diameter ~0.02 mm at t = 13.2 s"
+          ],
+          "data_quality": "APPROXIMATED_CURVE"
+        },
+        {
+          "experiment_id": "FLEX-F2-T02",
+          "name": "n-Heptane Droplet - 15% O2 - Near Extinction Limit Flight Test",
+          "fuel": "n-Heptane (C7H16)",
+          "fuel_phase": "liquid_droplet",
+          "oxygen_pct": 15.0,
+          "diluent": "N2",
+          "pressure_atm": 1.0,
+          "initial_droplet_diameter_mm": 3.00,
+          "airflow": "quiescent",
+          "airflow_cm_s": 0.0,
+          "duration_s": 12.0,
+          "data_file": "FLEX_F2_T02_heptane_15O2_1atm.csv",
+          "measurements": ["D_mm", "D2_mm2", "burn_rate_K_mm2_s", "phase", "flame_diam_mm", "temp_K"],
+          "measured_measurements": ["time_s", "D_mm", "D2_mm2", "burn_rate_K_mm2_s", "phase", "droplet_diameter", "D_squared", "burning_rate", "combustion_phase"],
+          "illustrative_measurements": ["flame_diam_mm", "temp_K", "flame_diameter", "ambient_temperature"],
+          "highlights": [
+            "Hot flame duration shortened to 3.0 s due to reduced oxygen",
+            "Cool flame phase persists from 3.1 to 11.8 s",
+            "Near Limiting Oxygen Index (LOI) extinction threshold"
+          ],
+          "data_quality": "APPROXIMATED_CURVE"
+        }
+      ]
+    },
+    {
+      "dataset_id": "BASS-II",
+      "psi_id": "PSI-25",
+      "name": "Burning and Suppression of Solids II (BASS-II)",
+      "investigation_type": "SOLID_MATERIAL_COMBUSTION",
+      "platform": "ISS Combustion Integrated Rack (CIR)",
+      "gravity": "microgravity_iss",
+      "gravity_ms2": 0.0,
+      "principal_investigator": "Sandra L. Olson (NASA Glenn), Paul V. Ferkul (USRA)",
+      "institution": "NASA Glenn Research Center / Universities Space Research Association",
+      "years": "2012-2015",
+      "description": "BASS-II investigated the burning, flame spread, and extinction limits of solid materials under low-velocity convective flow in microgravity aboard the ISS. Validated concurrent and opposed flow combustion theories across 70+ flight test burns.",
+      "key_discovery": "Flammability limits in microgravity differ fundamentally from Earth: low-speed convective flows (1-5 cm/s) support sustained flame spread at lower oxygen limits than normal gravity.",
+      "psi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+      "data_status": "APPROXIMATED_CURVE",
+      "data_attribution": "Flame position, flame length, flame width, and steady concurrent spread rate (0.079 cm/s) digitized from Olson et al. (Combustion and Flame 168:378-390, 2016) and NASA/TM-20210011385 Table A.5. Temperature and mass loss rate are illustrative estimates for 3D visualization.",
+      "experiments": [
+        {
+          "experiment_id": "BASS2-PMMA-T01",
+          "name": "PMMA Rod - 21% O2 - 10 cm/s Concurrent Flow (Test BASS2-O1)",
+          "fuel": "PMMA (Polymethylmethacrylate / Acrylic)",
+          "fuel_phase": "solid_rod",
+          "oxygen_pct": 21.0,
+          "diluent": "N2",
+          "pressure_atm": 1.0,
+          "sample_dimensions": "6.35 mm diameter x 100 mm length cast rod",
+          "airflow": "concurrent",
+          "airflow_cm_s": 10.0,
+          "duration_s": 107.0,
+          "data_file": "BASS2_PMMA_T01_21O2_10cms.csv",
+          "measurements": ["flame_pos_mm", "flame_length_mm", "flame_width_mm", "spread_rate_cm_s", "o2_pct", "airflow_cm_s", "temp_K", "mass_loss_rate_mg_s", "phase"],
+          "measured_measurements": ["time_s", "flame_pos_mm", "flame_length_mm", "flame_width_mm", "spread_rate_cm_s", "o2_pct", "airflow_cm_s", "phase", "flame_position", "flame_length", "flame_width", "spread_rate"],
+          "illustrative_measurements": ["temp_K", "mass_loss_rate_mg_s", "temperature", "mass_loss_rate"],
+          "highlights": [
+            "Steady concurrent flame spread achieved at 0.079 cm/s",
+            "Flame length stabilized at ~12.3 mm with 9.3 mm flame width",
+            "Natural extinction as flame runs out of unburned fuel rod at t = 107 s"
+          ],
+          "data_quality": "APPROXIMATED_CURVE"
+        }
+      ]
+    },
+    {
+      "dataset_id": "SAFFIRE",
+      "psi_id": "PSI-98",
+      "name": "Spacecraft Fire Safety Demonstration (SAFFIRE)",
+      "investigation_type": "LARGE_SCALE_SPACECRAFT_FIRE",
+      "platform": "Orbital ATK Cygnus spacecraft (post-ISS departure)",
+      "gravity": "microgravity_cygnus",
+      "gravity_ms2": 0.0,
+      "principal_investigator": "David L. Urban (NASA Glenn), Gary A. Ruff (NASA Glenn)",
+      "institution": "NASA Glenn Research Center",
+      "years": "2016-2024",
+      "description": "SAFFIRE was the first large-scale fire deliberately set in human spaceflight history. Conducted inside an uncrewed Cygnus cargo spacecraft after departing the ISS to measure flame spread across realistic spacecraft material samples without crew hazard.",
+      "key_discovery": "Large-scale spacecraft fires achieve steady concurrent flame spread (1.8 mm/s on SIBAL) in low-speed duct flow, with flame length plateauing at 40 mm and average power of 1200 W.",
+      "psi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+      "data_status": "APPROXIMATED_CURVE",
+      "data_attribution": "Flight measurements digitized directly from NASA NTRS 20170008805 (Ferkul, Olson, Urban, Ruff et al., 'Results of Large-Scale Spacecraft Flammability Tests') Table I, Section 14-22, and thermocouple data. Verified 420 s burn duration, 1.8 mm/s spread rate, 40 mm flame length plateau, and ~1630 K peak temperature.",
+      "experiments": [
+        {
+          "experiment_id": "SAFFIRE-I",
+          "name": "SIBAL Fabric - Large Scale Flight Test (Sample 1-1)",
+          "fuel": "SIBAL composite fabric (75% cotton / 25% fiberglass blend)",
+          "fuel_phase": "solid_fabric",
+          "oxygen_pct": 21.7,
+          "diluent": "N2",
+          "pressure_atm": 1.0,
+          "sample_dimensions": "40.6 cm width x 94 cm length (0.37 mm thick, 18 mg/cm²)",
+          "airflow": "concurrent",
+          "airflow_cm_s": 20.0,
+          "duration_s": 425.0,
+          "data_file": "SAFFIRE_I_SIBAL_fabric.csv",
+          "measurements": ["flame_pos_cm", "flame_length_cm", "flame_width_cm", "spread_rate_cm_s", "peak_temp_K", "flame_power_W", "flame_exists", "phase"],
+          "measured_measurements": ["time_s", "flame_pos_cm", "flame_length_cm", "flame_width_cm", "spread_rate_cm_s", "peak_temp_K", "flame_power_W", "flame_exists", "phase"],
+          "illustrative_measurements": [],
+          "highlights": [
+            "Largest fire ever deliberately set in space (40.6 cm x 94 cm sheet)",
+            "420 second full flight test burn duration before commanded airflow shutoff",
+            "1.8 mm/s (0.18 cm/s) steady concurrent flame spread rate",
+            "Flame length stabilized at 40 mm (4.0 cm) plateau across 40.6 cm sample width",
+            "Burned ~84 cm of fuel length (90% fuel consumed); ~1630 K peak thermocouple temperature"
+          ],
+          "data_quality": "APPROXIMATED_CURVE"
+        }
+      ]
+    },
+    {
+      "dataset_id": "SOFIE-GEL",
+      "psi_id": "PSI-SOFIE",
+      "name": "Solid Fuel Ignition and Extinction - Growth and Extinction Limits (SoFIE-GEL)",
+      "investigation_type": "SOLID_MATERIAL_COMBUSTION",
+      "platform": "ISS Combustion Integrated Rack (CIR) - SoFIE Insert",
+      "gravity": "microgravity_iss",
+      "gravity_ms2": 0.0,
+      "principal_investigator": "Sandra L. Olson (NASA GRC), Carlos Fernandez-Pello (UC Berkeley), James S. T'ien (CWRU), Jose L. Torero (UCL)",
+      "institution": "NASA Glenn Research Center / UC Berkeley / Case Western / UCL",
+      "years": "2022-2025",
+      "description": "SoFIE-GEL investigated the burning and extinction limits of thick and thin solid fuels (PMMA spheres, flat sheets, and cylinders) subjected to controlled external radiant flux and low-speed concurrent/opposed flow aboard the ISS.",
+      "key_discovery": "Identified critical radiant heating thresholds required to sustain flame spread over thick polymers in microgravity under sub-atmospheric oxygen levels down to 14% O2.",
+      "psi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-SOFIE",
+      "data_status": "MEASURED_TABLE",
+      "data_attribution": "Benchmark test conditions and growth rates from NASA Science SoFIE GEL Architecture Review and flight validation matrix (Olson, Fernandez-Pello, T'ien, Torero 2022).",
+      "experiments": [
+        {
+          "experiment_id": "SOFIE-G01",
+          "name": "PMMA 12.7 mm Sphere - 21% O2 - 5 cm/s Concurrent Flow",
+          "fuel": "PMMA (Polymethylmethacrylate)",
+          "fuel_phase": "solid_sphere",
+          "oxygen_pct": 21.0,
+          "diluent": "N2",
+          "pressure_atm": 1.0,
+          "sample_dimensions": "12.7 mm diameter cast PMMA sphere",
+          "airflow": "concurrent",
+          "airflow_cm_s": 5.0,
+          "duration_s": 90.0,
+          "measurements": ["material", "geometry", "oxygen_pct", "pressure_atm", "flow_velocity_cms", "flame_growth_rate", "extinction_observed"],
+          "measured_measurements": ["material", "geometry", "oxygen_pct", "pressure_atm", "flow_velocity_cms", "flame_growth_rate", "extinction_observed"],
+          "illustrative_measurements": [],
+          "highlights": [
+            "Spherical geometry microgravity flame spread benchmark",
+            "Flame growth rate stabilized at 0.045 mm/s",
+            "No early extinction under 21% O2 and 5 cm/s forced flow"
+          ],
+          "data_quality": "MEASURED_TABLE"
+        }
+      ]
+    },
+    {
+      "dataset_id": "SPICE",
+      "psi_id": "PSI-107",
+      "name": "Smoke Point In Coflow Experiment (SPICE)",
+      "investigation_type": "GAS_JET_FLAME",
+      "platform": "ISS Combustion Integrated Rack (CIR)",
+      "gravity": "microgravity_iss",
+      "gravity_ms2": 0.0,
+      "principal_investigator": "Dennis Stocker (NASA Glenn)",
+      "institution": "NASA Glenn Research Center",
+      "years": "2015-2018",
+      "description": "SPICE investigated the structure of laminar gas jet diffusion flames in microgravity, focusing on the smoke point and soot formation. Without buoyancy, flames become spherical and soot behavior changes dramatically.",
+      "key_discovery": "Smoke point in microgravity differs fundamentally from Earth. Soot concentrates at the flame tip rather than being swept upward, altering flame luminosity, soot emission, and radiative heat transfer.",
+      "psi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-107",
+      "data_status": "METADATA_ONLY",
+      "data_attribution": "Metadata documented from NASA Glenn Research Center mission releases. Experimental gas-jet soot concentration time-series requires direct NASA Physical Sciences Informatics (PSI) credentialed download. No experimental time-series file is currently available for public open-access ingestion. Maintained as METADATA_ONLY.",
+      "experiments": []
+    }
+  ]
+}

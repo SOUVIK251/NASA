@@ -1,0 +1,12 @@
+# NASA Physical Sciences Informatics - SAFFIRE (PSI-98) Flight Summary Measurements
+# Source: NASA NTRS 20170008805 "Results of Large-Scale Spacecraft Flammability Tests"
+# Reference: Table I (p. 29) - Summary of Samples, Test Conditions, and Selected Results
+# Additional Reference: NASA/TM-20230005412 (Saffire IV-VI Exploration Atmosphere tests)
+# Data Quality: NASA_TECHNICAL_REPORT (Direct flight test records)
+experiment_id,test_id,mission,sample_material,pressure_atm,flame_spread_rate,heat_release_rate,notes,data_status
+EXP-SAFFIRE,SAFFIRE-I-1-1,Saffire-I,Cotton-Fiberglass blend (SIBAL 40.6x94cm),1.00,0.180,1200,Large-scale concurrent flow test; 420s duration; 84cm burn length; 1.8 mm/s spread,NASA_TECHNICAL_REPORT
+EXP-SAFFIRE,SAFFIRE-I-1-2,Saffire-I,Cotton-Fiberglass blend (SIBAL 40.6x10cm),1.00,0.130,800,Large-scale opposed flow contingency test; 70s duration; 1.3 mm/s spread,NASA_TECHNICAL_REPORT
+EXP-SAFFIRE,SAFFIRE-II-2-5,Saffire-II,Cotton-Fiberglass blend (SIBAL 5x29cm),1.00,0.210,200,Narrow strip concurrent flow 20 cm/s; 145s duration; 2.1 mm/s spread,NASA_TECHNICAL_REPORT
+EXP-SAFFIRE,SAFFIRE-II-2-6,Saffire-II,Cotton-Fiberglass blend (SIBAL 5x29cm),1.00,0.260,250,Narrow strip concurrent flow 25 cm/s; 115s duration; 2.6 mm/s spread,NASA_TECHNICAL_REPORT
+EXP-SAFFIRE,SAFFIRE-II-2-7,Saffire-II,PMMA & Nomex blend (5x29cm),1.00,0.080,180,PMMA section consumed (5cm); Nomex section self-extinguished,NASA_TECHNICAL_REPORT
+EXP-SAFFIRE,SAFFIRE-IV-01,Saffire-IV,Cotton-Fiberglass blend (SIBAL),0.56,0.240,1400,Exploration Atmosphere 56.5 kPa (0.56 atm) 34% O2; reduced pressure burn,NASA_TECHNICAL_REPORT

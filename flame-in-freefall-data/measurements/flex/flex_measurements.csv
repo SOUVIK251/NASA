@@ -1,0 +1,13 @@
+# NASA Physical Sciences Informatics - FLEX (PSI-69) Test Summary Measurements
+# Source: NASA/TP—2015-216046 "Flame Extinguishment Experiment (FLEX) Detailed Test Results"
+# Reference: Table IX (p. 23-35) - All 284 flight test burns aboard ISS CIR MDCA
+# Data Quality: NASA_TECHNICAL_REPORT (Direct flight test records)
+experiment_id,test_id,fuel,oxygen_pct,pressure_atm,droplet_diameter_mm,ambient_flow,ignition_time_s,extinction_time_s,cool_flame_observed,data_status
+EXP-FLEX,FLEX-001,Methanol,21.0,1.00,1.69,Quiescent,0.0,4.3,False,NASA_TECHNICAL_REPORT
+EXP-FLEX,FLEX-002,Methanol,21.0,1.00,1.86,Quiescent,0.0,5.0,False,NASA_TECHNICAL_REPORT
+EXP-FLEX,FLEX-007,n-Heptane,21.0,1.00,1.87,Quiescent,0.0,5.3,False,NASA_TECHNICAL_REPORT
+EXP-FLEX,FLEX-008,n-Heptane,21.0,1.00,2.95,Quiescent,0.0,14.8,True,NASA_TECHNICAL_REPORT
+EXP-FLEX,FLEX-018,n-Heptane,21.0,2.04,2.74,Quiescent,0.0,8.1,True,NASA_TECHNICAL_REPORT
+EXP-FLEX,FLEX-062,n-Heptane,17.5,1.00,3.48,Quiescent,0.0,12.4,True,NASA_TECHNICAL_REPORT
+EXP-FLEX,FLEX-079,n-Heptane,13.4,1.01,3.06,Quiescent,0.0,6.2,False,NASA_TECHNICAL_REPORT
+EXP-FLEX,FLEX-121,n-Decane,21.0,1.00,2.45,Quiescent,0.0,11.2,True,NASA_TECHNICAL_REPORT
