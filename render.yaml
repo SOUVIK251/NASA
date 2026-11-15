@@ -1,0 +1,17 @@
+# Render deployment configuration for Flame in Freefall
+# https://render.com/docs/yaml-spec
+
+services:
+  - type: web
+    name: nasa-flame-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+    # The SQLite database (flame_research.db) is NOT committed to the repository.
+    # main.py bootstraps the database schema and seeds all NASA research records
+    # automatically at startup via init_db() + seed_database() before the RAG
+    # engine is imported.  No manual database setup step is needed.

@@ -20,12 +20,55 @@ try:
 except ImportError:
     pass  # python-dotenv not installed; env vars must be set manually
 
+# ── Bootstrap database BEFORE importing rag_engine ────────────────────────────
+# rag_engine instantiates NasaRAGEngine() at module load time, which immediately
+# queries the database. On Render (and any fresh deployment) the .db file is NOT
+# in the repository (excluded by .gitignore), so it must be initialised and seeded
+# before the module is imported.  Any failure here is fatal and must surface loudly.
+try:
+    from database import get_db_connection, init_db
+    init_db()  # Create schema tables (idempotent — uses CREATE TABLE IF NOT EXISTS)
+
+    # Seed research corpus if experiments table is empty
+    _conn = get_db_connection()
+    _c = _conn.cursor()
+    _c.execute("SELECT COUNT(*) FROM experiments;")
+    _exp_count = _c.fetchone()[0]
+    _conn.close()
+
+    if _exp_count == 0:
+        print("[Startup] experiments table is empty — seeding NASA research corpus...")
+        from seed_data import seed_database
+        seed_database()
+
+        # Verify seed succeeded
+        _conn2 = get_db_connection()
+        _c2 = _conn2.cursor()
+        _c2.execute("SELECT COUNT(*) FROM experiments;")
+        _seeded_count = _c2.fetchone()[0]
+        _conn2.close()
+        if _seeded_count == 0:
+            raise RuntimeError(
+                "[FATAL] seed_database() completed but the experiments table is still empty. "
+                "Check seed_data.py for errors."
+            )
+        print(f"[Startup] Database seeded successfully: {_seeded_count} experiments loaded.")
+    else:
+        print(f"[Startup] Database ready: {_exp_count} experiments already present.")
+
+except Exception as _bootstrap_err:
+    # Re-raise so the process exits with a clear error message visible in Render logs.
+    raise RuntimeError(
+        f"[FATAL] Database bootstrap failed — cannot start server. "
+        f"Reason: {_bootstrap_err}"
+    ) from _bootstrap_err
+
+# ── Application imports (after DB is ready) ────────────────────────────────────
 from typing import Dict, Any, List, Optional
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-from database import get_db_connection, init_db
 from rag_engine import rag_engine
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
@@ -64,20 +107,11 @@ app.include_router(auth_router)
 
 @app.on_event("startup")
 def on_startup():
-    init_db()
-    # Initialize auth database (users, OTP, audit log tables)
+    # NOTE: init_db() and seeding are handled at module load (above) so that
+    # the rag_engine singleton is fully populated before FastAPI starts.
+    # This startup hook only needs to initialise the auth database.
     init_auth_db()
-    try:
-        conn = get_db_connection()
-        c = conn.cursor()
-        c.execute("SELECT COUNT(*) FROM experiments;")
-        count = c.fetchone()[0]
-        conn.close()
-        if count == 0:
-            from seed_data import seed_database
-            seed_database()
-    except Exception as e:
-        print(f"[!] Database startup check warning: {e}")
+    print(f"[Startup] RAG engine ready: {len(rag_engine.chunks)} indexed chunks.")
 
 
 @app.get("/api/status")
